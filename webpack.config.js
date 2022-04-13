@@ -36,7 +36,19 @@ module.exports = {
       {
         test: /\.txt/,
         type: 'asset/source'
-      }
+      },
+      {
+        test: /\.(gif|png|jpe?g|jpg|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
     ]
   }
 };
